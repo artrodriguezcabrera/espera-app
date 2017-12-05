@@ -1,7 +1,9 @@
 <h1>Espera</h1>
 <h2>All US Ports of Entry</h2>
 
+
 <% @ports.each do |port| %>
+  
   <li>
     <%= link_to port.port_name, port %> |
     <%= port.crossing_name %><br>
