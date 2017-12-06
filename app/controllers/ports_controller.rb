@@ -6,5 +6,6 @@ class PortsController < ApplicationController
 
   def show
     @port = Port.find(params[:id])
+    @status = @port.statuses.last
   end
 end

@@ -1,46 +1,59 @@
-<h1><%= @port.port_name%></h1>
-Data last updated: <%= @port.date %><br><br>
+<h1><%= @status.port.port_name %> | <%= @status.port.crossing_name %></h1>
+Port Status: <%= @status.port_status %><br>
+Data last updated: <%= @status.date %><br><br>
+
+<% if @status.pass_max_lanes.to_i == 0 %>
+    <% %>
+<% else %>
 <fieldset>
-  <legend>Passenger Vehicles | Max Lanes: <%= @port.pass_max_lanes %></legend>
-  Standard Lanes | Updated: <%= @port.pass_standard_update_time%><br> 
-  Status: <%= @port.pass_standard_operational_status %><br>
-  Delay: <%= @port.pass_standard_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.pass_standard_lanes_open %><br><br>
+  <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %></legend>
+  Standard Lanes | Updated: <%= @status.pass_standard_update_time%><br> 
+  Status: <%= @status.pass_standard_operational_status %><br>
+  Delay: <%= @status.pass_standard_delay_minutes %> mins<br>
+  Lanes Open: <%= @status.pass_standard_lanes_open %><br><br>
   
-  SENTRI Lanes | Updated <%= @port.pass_sentri_update_time%><br> 
-  Status: <%= @port.pass_sentri_operational_status %><br>
-  Delay: <%= @port.pass_sentri_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.pass_sentri_lanes_open %><br><br>
+  SENTRI Lanes | Updated <%= @status.pass_sentri_update_time%><br> 
+  Status: <%= @status.pass_sentri_operational_status %><br>
+  Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
+  Lanes Open: <%= @status.pass_sentri_lanes_open %><br><br>
   
-  Ready Lanes | Updated <%= @port.pass_ready_update_time%><br> 
-  Status: <%= @port.pass_ready_operational_status %><br>
-  Delay: <%= @port.pass_ready_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.pass_ready_lanes_open %><br>
+  Ready Lanes | Updated <%= @status.pass_ready_update_time%><br> 
+  Status: <%= @status.pass_ready_operational_status %><br>
+  Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
+  Lanes Open: <%= @status.pass_ready_lanes_open %><br>
 </fieldset><br>
+<% end %>
 
-<fieldset>
-  <legend>Pedestrians | Max Lanes: <%= @port.ped_max_lanes %></legend>
-  Standard Lanes | Updated <%= @port.ped_standard_update_time%><br> 
-  Status: <%= @port.ped_standard_operational_status %><br>
-  Delay: <%= @port.ped_standard_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.ped_standard_lanes_open %><br><br>
-  
-  Ready Lanes | Updated <%= @port.ped_ready_update_time%><br> 
-  Status: <%= @port.ped_ready_operational_status %><br>
-  Delay: <%= @port.ped_ready_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.ped_ready_lanes_open %><br>
+<% if @status.ped_max_lanes.to_i == 0 %>
+    <% %>
+<% else %>
+  <fieldset>
+    <legend>Pedestrians | Max Lanes: <%= @status.ped_max_lanes %></legend>
+    Standard Lanes | Updated <%= @status.ped_standard_update_time%><br> 
+    Status: <%= @status.ped_standard_operational_status %><br>
+    Delay: <%= @status.ped_standard_delay_minutes %> mins<br>
+    Lanes Open: <%= @status.ped_standard_lanes_open %><br><br>
+    
+    Ready Lanes | Updated <%= @status.ped_ready_update_time%><br> 
+    Status: <%= @status.ped_ready_operational_status %><br>
+    Delay: <%= @status.ped_ready_delay_minutes %> mins<br>
+    Lanes Open: <%= @status.ped_ready_lanes_open %><br>
+  </fieldset><br>
+<% end %>
 
-</fieldset><br>
+<% if @status.comm_max_lanes.to_i == 0 %>
+    <p></p>
+<% else %>
+  <fieldset>
+    <legend>Commercial Vehicles | Max Lanes: <%= @status.comm_max_lanes %></legend>
+    Standard Lanes | Updated <%= @status.comm_standard_update_time%><br> 
+    Status: <%= @status.comm_standard_operational_status %><br>
+    Delay: <%= @status.comm_standard_delay_minutes %> mins<br>
+    Lanes Open: <%= @status.comm_standard_lanes_open %><br><br>
 
-<fieldset>
-  <legend>Commercial Vehicles | Max Lanes: <%= @port.comm_max_lanes %><</legend>
-  Standard Lanes | Updated <%= @port.comm_standard_update_time%><br> 
-  Status: <%= @port.comm_standard_operational_status %><br>
-  Delay: <%= @port.comm_standard_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.comm_standard_lanes_open %><br><br>
-
-  FAST Lanes | Updated <%= @port.comm_fast_update_time%><br> 
-  Status: <%= @port.comm_fast_operational_status %><br>
-  Delay: <%= @port.comm_fast_delay_minutes %> mins<br>
-  Lanes Open: <%= @port.comm_fast_lanes_open %><br><br>
-</fieldset>
+    FAST Lanes | Updated <%= @status.comm_fast_update_time%><br> 
+    Status: <%= @status.comm_fast_operational_status %><br>
+    Delay: <%= @status.comm_fast_delay_minutes %> mins<br>
+    Lanes Open: <%= @status.comm_fast_lanes_open %><br><br>
+  </fieldset>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130161101) do
+ActiveRecord::Schema.define(version: 20171205215409) do
 
   create_table "ports", force: :cascade do |t|
     t.string "port_number"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20171130161101) do
     t.string "port_name"
     t.string "crossing_name"
     t.string "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
     t.string "date"
     t.string "port_status"
     t.string "comm_max_lanes"
@@ -51,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171130161101) do
     t.string "ped_ready_operational_status"
     t.string "ped_ready_delay_minutes"
     t.string "ped_ready_lanes_open"
+    t.integer "port_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

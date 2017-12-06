@@ -1,14 +1,14 @@
 <h1>Espera</h1>
 <h2>All US Ports of Entry</h2>
 
-
+<%# Drop down selector %>
+<%#= collection_select(:id, :port_name, Port.all, :id, :port_name) %>
 <% @ports.each do |port| %>
-  
-  <li>
+  <ol>
     <%= link_to port.port_name, port %> |
     <%= port.crossing_name %><br>
-    Status: <%= port.port_status%> | 
+    <%= port.border %> - 
     Hours: <%= port.hours %> <br><br>
-  </li>
+  </ol>
 <% end %>
 

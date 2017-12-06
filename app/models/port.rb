@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class Port < ApplicationRecord
+  has_many :statuses
 
   # To test in console run:  
   # Port.scrape_port_wait_times("https://apps.cbp.gov/bwt/bwt.xml")
@@ -57,14 +58,19 @@ class Port < ApplicationRecord
 			@ped_ready_delay_minutes = p.css("pedestrian_lanes ready_lanes delay_minutes").text
       @ped_ready_lanes_open = p.css("pedestrian_lanes ready_lanes lanes_open").text
      
-      Port.create(
-        port_number: @port_number,
+      # Check if Port exists, if not, then create.
+      port = Port.where(port_number: @port_number).first_or_create(
         border: @border,
         port_name: @port_name,
         crossing_name: @crossing_name,
-        hours: @hours,
+        hours: @hours
+      )
+
+      # Create new Status entry, set above port.id equal to Status.port_id
+      status = Status.create(
         date: @date,
         port_status: @port_status,
+        
         comm_max_lanes: @comm_max_lanes,
         comm_standard_update_time: @comm_standard_update_time,
         comm_standard_operational_status: @comm_standard_operational_status,
@@ -74,6 +80,7 @@ class Port < ApplicationRecord
         comm_fast_update_time: @comm_fast_update_time,
         comm_fast_delay_minutes: @comm_fast_delay_minutes,
         comm_fast_lanes_open: @comm_fast_lanes_open,
+        
         pass_max_lanes: @pass_max_lanes,
         pass_standard_update_time: @pass_standard_update_time,
         pass_standard_operational_status: @pass_standard_operational_status,
@@ -87,6 +94,7 @@ class Port < ApplicationRecord
         pass_ready_operational_status: @pass_ready_operational_status,
         pass_ready_delay_minutes: @pass_ready_delay_minutes,
         pass_ready_lanes_open: @pass_ready_lanes_open,
+        
         ped_max_lanes: @ped_max_lanes,
         ped_standard_update_time: @ped_standard_update_time,
         ped_standard_operational_status: @ped_standard_operational_status,
@@ -95,10 +103,11 @@ class Port < ApplicationRecord
         ped_ready_update_time: @ped_ready_update_time,
         ped_ready_operational_status: @ped_ready_operational_status,
         ped_ready_delay_minutes: @ped_ready_delay_minutes,
-        ped_ready_lanes_open: @ped_ready_lanes_open
+        ped_ready_lanes_open: @ped_ready_lanes_open,
+
+        port_id: port.id
       )
+
     end
   end
-
-
 end
