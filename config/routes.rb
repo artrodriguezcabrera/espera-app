@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'ports/index'
-
+  # get 'ports/index'
+  root to: "ports#index"
   resources :ports
 
 
