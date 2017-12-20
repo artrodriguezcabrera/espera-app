@@ -1,14 +1,29 @@
 <h1>Espera</h1>
-<h2>All US Ports of Entry</h2>
+<p>USA Border Wait Times Information
 
 <%# Drop down selector %>
 <%#= collection_select(:id, :port_name, Port.all, :id, :port_name) %>
-<% @ports.each do |port| %>
-  <ol>
-    <%= link_to port.port_name, port %> |
-    <%= port.crossing_name %><br>
-    <%= port.border %> - 
-    Hours: <%= port.hours %> <br><br>
-  </ol>
-<% end %>
+<div class="row">
+  <div class="column">
+    <h3>Canada --> USA</h3>
+    <% @canada.each do |port| %>
+      <ol>
+        <%= link_to port.port_name, port %> |
+        <%= port.crossing_name %> | 
+        Hours: <%= port.hours %>
+      </ol>
+    <% end %>
+  </div>
 
+  <div class="column">
+    <h3>Mexico --> USA</h3>
+    <% @mexico.each do |port| %>
+      <ol>
+        <%= link_to port.port_name, port %> |
+        <%= port.crossing_name %> |
+        Hours: <%= port.hours %>
+      </ol>
+    <% end %>
+  </div>
+</div>
+<p>Data provided by US Border Patrol</p>

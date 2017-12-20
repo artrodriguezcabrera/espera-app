@@ -1,6 +1,8 @@
 class PortsController < ApplicationController
   def index
     @ports = Port.all
+    @canada = @ports.canada
+    @mexico = @ports.mexico
     # raise params.inspect
   end
 
