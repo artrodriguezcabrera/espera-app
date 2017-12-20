@@ -4,9 +4,11 @@ require 'open-uri'
 class Port < ApplicationRecord
   has_many :statuses
 
+  scope :canada, -> { where(border: 'Canadian Border')}
+  scope :mexico, -> { where(border: 'Mexican Border')}
+
   # To test in console run:  
   # Port.scrape_port_wait_times("https://apps.cbp.gov/bwt/bwt.xml")
-
   def self.scrape_port_wait_times(url)
 
     doc = Nokogiri::HTML(open(url))
@@ -107,7 +109,7 @@ class Port < ApplicationRecord
 
         port_id: port.id
       )
-
     end
   end
+
 end

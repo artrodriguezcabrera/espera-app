@@ -5,23 +5,29 @@ Data last updated: <%= @status.date %><br><br>
 <% if @status.pass_max_lanes.to_i == 0 %>
     <% %>
 <% else %>
-<fieldset>
-  <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %></legend>
-  Standard Lanes | Updated: <%= @status.pass_standard_update_time%><br> 
-  Status: <%= @status.pass_standard_operational_status %><br>
-  Delay: <%= @status.pass_standard_delay_minutes %> mins<br>
-  Lanes Open: <%= @status.pass_standard_lanes_open %><br><br>
-  
-  SENTRI Lanes | Updated <%= @status.pass_sentri_update_time%><br> 
-  Status: <%= @status.pass_sentri_operational_status %><br>
-  Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
-  Lanes Open: <%= @status.pass_sentri_lanes_open %><br><br>
-  
-  Ready Lanes | Updated <%= @status.pass_ready_update_time%><br> 
-  Status: <%= @status.pass_ready_operational_status %><br>
-  Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
-  Lanes Open: <%= @status.pass_ready_lanes_open %><br>
-</fieldset><br>
+  <fieldset>
+    <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %></legend>
+    <div>
+      <div>
+        Standard Lanes | Updated: <%= @status.pass_standard_update_time%><br> 
+        Status: <%= @status.pass_standard_operational_status %><br>
+        Delay: <%= @status.pass_standard_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.pass_standard_lanes_open %>
+      </div>
+      <div>
+        SENTRI Lanes | Updated <%= @status.pass_sentri_update_time%><br> 
+        Status: <%= @status.pass_sentri_operational_status %><br>
+        Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.pass_sentri_lanes_open %>
+      </div>
+      <div>
+        Ready Lanes | Updated <%= @status.pass_ready_update_time%><br> 
+        Status: <%= @status.pass_ready_operational_status %><br>
+        Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.pass_ready_lanes_open %>
+      </div>
+    </div>
+  </fieldset><br>
 <% end %>
 
 <% if @status.ped_max_lanes.to_i == 0 %>
@@ -29,15 +35,18 @@ Data last updated: <%= @status.date %><br><br>
 <% else %>
   <fieldset>
     <legend>Pedestrians | Max Lanes: <%= @status.ped_max_lanes %></legend>
-    Standard Lanes | Updated <%= @status.ped_standard_update_time%><br> 
-    Status: <%= @status.ped_standard_operational_status %><br>
-    Delay: <%= @status.ped_standard_delay_minutes %> mins<br>
-    Lanes Open: <%= @status.ped_standard_lanes_open %><br><br>
-    
-    Ready Lanes | Updated <%= @status.ped_ready_update_time%><br> 
-    Status: <%= @status.ped_ready_operational_status %><br>
-    Delay: <%= @status.ped_ready_delay_minutes %> mins<br>
-    Lanes Open: <%= @status.ped_ready_lanes_open %><br>
+    <div>
+      Standard Lanes | Updated <%= @status.ped_standard_update_time%><br> 
+      Status: <%= @status.ped_standard_operational_status %><br>
+      Delay: <%= @status.ped_standard_delay_minutes %> mins<br>
+      Lanes Open: <%= @status.ped_standard_lanes_open %><br><br>
+    </div>
+    <div>
+      Ready Lanes | Updated <%= @status.ped_ready_update_time%><br> 
+      Status: <%= @status.ped_ready_operational_status %><br>
+      Delay: <%= @status.ped_ready_delay_minutes %> mins<br>
+      Lanes Open: <%= @status.ped_ready_lanes_open %><br>
+    </div>
   </fieldset><br>
 <% end %>
 
