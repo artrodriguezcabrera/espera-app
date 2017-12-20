@@ -6,22 +6,22 @@ Data last updated: <%= @status.date %><br><br>
     <% %>
 <% else %>
   <fieldset>
-    <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %></legend>
+    <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %> | Updated: <%= @status.pass_standard_update_time%></legend>
     <div class="row">
       <div class="status-column">
-        Standard Lanes | Updated: <%= @status.pass_standard_update_time%><br> 
+        Standard Lanes<br> 
         Status: <%= @status.pass_standard_operational_status %><br>
         Delay: <%= @status.pass_standard_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_standard_lanes_open %>
       </div>
       <div class="status-column">
-        SENTRI Lanes | Updated <%= @status.pass_sentri_update_time%><br> 
+        SENTRI Lanes<br> 
         Status: <%= @status.pass_sentri_operational_status %><br>
         Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_sentri_lanes_open %>
       </div>
       <div class="status-column">
-        Ready Lanes | Updated <%= @status.pass_ready_update_time%><br> 
+        Ready Lanes<br> 
         Status: <%= @status.pass_ready_operational_status %><br>
         Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_ready_lanes_open %>
@@ -34,18 +34,20 @@ Data last updated: <%= @status.date %><br><br>
     <% %>
 <% else %>
   <fieldset>
-    <legend>Pedestrians | Max Lanes: <%= @status.ped_max_lanes %></legend>
-    <div>
-      Standard Lanes | Updated <%= @status.ped_standard_update_time%><br> 
-      Status: <%= @status.ped_standard_operational_status %><br>
-      Delay: <%= @status.ped_standard_delay_minutes %> mins<br>
-      Lanes Open: <%= @status.ped_standard_lanes_open %><br><br>
-    </div>
-    <div>
-      Ready Lanes | Updated <%= @status.ped_ready_update_time%><br> 
-      Status: <%= @status.ped_ready_operational_status %><br>
-      Delay: <%= @status.ped_ready_delay_minutes %> mins<br>
-      Lanes Open: <%= @status.ped_ready_lanes_open %><br>
+    <legend>Pedestrians | Max Lanes: <%= @status.ped_max_lanes %> | Updated <%= @status.ped_standard_update_time%></legend>
+    <div class="row">
+      <div class="column">
+        Standard Lanes<br> 
+        Status: <%= @status.ped_standard_operational_status %><br>
+        Delay: <%= @status.ped_standard_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.ped_standard_lanes_open %><br><br>
+      </div>
+      <div class="column">
+        Ready Lanes<br> 
+        Status: <%= @status.ped_ready_operational_status %><br>
+        Delay: <%= @status.ped_ready_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.ped_ready_lanes_open %><br>
+      </div>
     </div>
   </fieldset><br>
 <% end %>
@@ -54,16 +56,21 @@ Data last updated: <%= @status.date %><br><br>
     <p></p>
 <% else %>
   <fieldset>
-    <legend>Commercial Vehicles | Max Lanes: <%= @status.comm_max_lanes %></legend>
-    Standard Lanes | Updated <%= @status.comm_standard_update_time%><br> 
-    Status: <%= @status.comm_standard_operational_status %><br>
-    Delay: <%= @status.comm_standard_delay_minutes %> mins<br>
-    Lanes Open: <%= @status.comm_standard_lanes_open %><br><br>
-
-    FAST Lanes | Updated <%= @status.comm_fast_update_time%><br> 
-    Status: <%= @status.comm_fast_operational_status %><br>
-    Delay: <%= @status.comm_fast_delay_minutes %> mins<br>
-    Lanes Open: <%= @status.comm_fast_lanes_open %><br><br>
+    <legend>Commercial Vehicles | Max Lanes: <%= @status.comm_max_lanes %> | Updated <%= @status.comm_standard_update_time%></legend>
+    <div class="row">
+      <div class="column">
+        Standard Lanes<br> 
+        Status: <%= @status.comm_standard_operational_status %><br>
+        Delay: <%= @status.comm_standard_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.comm_standard_lanes_open %><br><br>
+      </div>
+      <div class="column">
+        FAST Lanes<br> 
+        Status: <%= @status.comm_fast_operational_status %><br>
+        Delay: <%= @status.comm_fast_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.comm_fast_lanes_open %><br><br>
+      </div>
+    </div>
   </fieldset>
 <% end %>
 
