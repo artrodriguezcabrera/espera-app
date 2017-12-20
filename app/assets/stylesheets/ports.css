@@ -3,6 +3,11 @@
   width: 50%;
 }
 
+.status-column {
+  float: left;
+  width: 33%;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -16,3 +21,4 @@
       width: 100%;
   }
 }
+

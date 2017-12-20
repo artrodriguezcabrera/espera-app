@@ -7,20 +7,20 @@ Data last updated: <%= @status.date %><br><br>
 <% else %>
   <fieldset>
     <legend>Passenger Vehicles | Max Lanes: <%= @status.pass_max_lanes %></legend>
-    <div>
-      <div>
+    <div class="row">
+      <div class="status-column">
         Standard Lanes | Updated: <%= @status.pass_standard_update_time%><br> 
         Status: <%= @status.pass_standard_operational_status %><br>
         Delay: <%= @status.pass_standard_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_standard_lanes_open %>
       </div>
-      <div>
+      <div class="status-column">
         SENTRI Lanes | Updated <%= @status.pass_sentri_update_time%><br> 
         Status: <%= @status.pass_sentri_operational_status %><br>
         Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_sentri_lanes_open %>
       </div>
-      <div>
+      <div class="status-column">
         Ready Lanes | Updated <%= @status.pass_ready_update_time%><br> 
         Status: <%= @status.pass_ready_operational_status %><br>
         Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
