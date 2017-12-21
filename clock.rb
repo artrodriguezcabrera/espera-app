@@ -17,6 +17,6 @@ module Clockwork
   #   puts "Running #{job}, at #{time}"
   # end
 
-  every(30.minutes, 'scraper.job')
+  every(60.minutes, 'scraper.job')
 
 end
