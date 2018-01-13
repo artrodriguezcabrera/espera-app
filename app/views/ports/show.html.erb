@@ -15,16 +15,16 @@ Data last updated: <%= @status.date %><br><br>
         Lanes Open: <%= @status.pass_standard_lanes_open %>
       </div>
       <div class="status-column">
-        SENTRI Lanes<br> 
-        Status: <%= @status.pass_sentri_operational_status %><br>
-        Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
-        Lanes Open: <%= @status.pass_sentri_lanes_open %>
-      </div>
-      <div class="status-column">
         Ready Lanes<br> 
         Status: <%= @status.pass_ready_operational_status %><br>
         Delay: <%= @status.pass_ready_delay_minutes %> mins<br>
         Lanes Open: <%= @status.pass_ready_lanes_open %>
+      </div>
+      <div class="status-column">
+        SENTRI Lanes<br> 
+        Status: <%= @status.pass_sentri_operational_status %><br>
+        Delay: <%= @status.pass_sentri_delay_minutes %> mins<br>
+        Lanes Open: <%= @status.pass_sentri_lanes_open %>
       </div>
     </div>
   </fieldset><br>
