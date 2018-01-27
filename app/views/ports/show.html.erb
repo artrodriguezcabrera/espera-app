@@ -1,6 +1,6 @@
 <div class="header">
   <div class="header-content">
-    <div class="header-logo"><img src="/assets/logo.png"></div>
+    <div class="header-logo"><%= image_tag "logo.png"%></div>
     <div class="header-sub">USA Border Wait Times Information</div>
   </div>
 </div>
@@ -23,7 +23,7 @@
       <fieldset>
         <div class="crossing-type">
           <div>
-            <div class="icon pass"><img src="/assets/icon_passengers.png"></div>
+            <div class="icon pass"><%= image_tag "icon_passengers.png"%></div>
             <div class="crossing-text">Passenger Vehicles</div>
           </div>
           <div class="crossing-moreInfo">Max Lanes: <%= @status.pass_max_lanes %>, Updated: <%= @status.pass_standard_update_time%></div>
@@ -57,7 +57,7 @@
       <fieldset>
         <div class="crossing-type">
           <div>
-            <div class="icon ped"><img src="/assets/icon_pedestrian.png"></div>
+            <div class="icon ped"><%= image_tag "icon_pedestrian.png"%></div>
             <div class="crossing-text">Pedestrians</div>
           </div>
           <div class="crossing-moreInfo">Max Lanes: <%= @status.ped_max_lanes %>, Updated <%= @status.ped_standard_update_time%></div>
@@ -85,7 +85,7 @@
       <fieldset>
         <div class="crossing-type">
           <div>
-            <div class="icon pass"><img src="/assets/icon_passengers.png"></div>
+            <div class="icon pass"><%= image_tag "icon_commercial.png"%></div>
             <div class="crossing-text">Commercial Vehicles</div>
           </div>
           <div class="crossing-moreInfo">Max Lanes: <%= @status.comm_max_lanes %>, Updated <%= @status.comm_standard_update_time%></div>
