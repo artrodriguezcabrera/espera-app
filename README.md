@@ -1,24 +1,10 @@
-# README
+# Espera
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application that presents border wait time information for people traveling across the Canadaian and Mexican border.
+You can view any of the ports going into the United States and be better informed to make better traveling plans.
 
-Things you may want to cover:
+Video Demo: https://www.youtube.com/watch?v=Y3Fhbn_VFvI (https://www.youtube.com/watch?v=Y3Fhbn_VFvI)
 
-* Ruby version
+## Contributions
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Fork the repo and create pull requests.  All are welcome and appreciated.
