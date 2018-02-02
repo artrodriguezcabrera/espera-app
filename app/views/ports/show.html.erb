@@ -3,7 +3,7 @@
   <div class="content-card">
     <div class="port-header">
       <div class="port-name"><%= @status.port.port_name %></div>
-      <div class="port-updated">Data last updated: <%= @status.date %></div>
+      <div class="port-updated">Updated: <%= @status.date %> <br><%= @status.pass_standard_update_time%></div>
     </div>
     <div class="crossing-header">
       <div class="crossing-name"><%= @status.port.crossing_name %></div>
@@ -19,7 +19,7 @@
             <div class="icon pass"><%= image_tag "icon_passengers.png"%></div>
             <div class="crossing-text">Passenger Vehicles</div>
           </div>
-          <div class="crossing-moreInfo">Max Lanes: <%= @status.pass_max_lanes %>, Updated: <%= @status.pass_standard_update_time%></div>
+          <div class="crossing-moreInfo">Max Lanes: <%= @status.pass_max_lanes %></div>
         </div>
         <div class="row">
           <div class="status-column">
@@ -53,7 +53,7 @@
             <div class="icon ped"><%= image_tag "icon_pedestrian.png"%></div>
             <div class="crossing-text">Pedestrians</div>
           </div>
-          <div class="crossing-moreInfo">Max Lanes: <%= @status.ped_max_lanes %>, Updated <%= @status.ped_standard_update_time%></div>
+          <div class="crossing-moreInfo">Max Lanes: <%= @status.ped_max_lanes %></div>
         </div>
         <div class="row">
           <div class="status-column">
@@ -81,7 +81,7 @@
             <div class="icon pass"><%= image_tag "icon_commercial.png"%></div>
             <div class="crossing-text">Commercial Vehicles</div>
           </div>
-          <div class="crossing-moreInfo">Max Lanes: <%= @status.comm_max_lanes %>, Updated <%= @status.comm_standard_update_time%></div>
+          <div class="crossing-moreInfo">Max Lanes: <%= @status.comm_max_lanes %></div>
         </div>
         <div class="row">
           <div class="status-column">
