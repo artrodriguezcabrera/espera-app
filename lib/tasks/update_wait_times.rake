@@ -4,7 +4,7 @@ namespace :abc do
 
     puts "Starting Wait Times Job..."
 
-    Port.scrape_port_wait_times("https://apps.cbp.gov/bwt/bwt.xml")
+    Port.scrape_port_wait_times("https://bwt.cbp.gov/xml/bwt.xml")
 
     puts "Job completed successfully!"
   end
